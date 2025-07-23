@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Place Details</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Place Details</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <main>
-        <section id="place-details">
-            <!-- Place details will be populated dynamically -->
-        </section>
-        <section id="reviews">
-            <!-- Reviews will be populated dynamically -->
-        </section>
-        <section id="add-review">
-            <h2>Add a Review</h2>
-            <form id="review-form">
-                <label for="review-text">Review:</label>
-                <textarea id="review-text" name="review-text" required></textarea>
-                
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
-    <script src="scripts.js"></script>
+  <main>
+    <section id="place-details">
+      <div class="place-details">
+        <div class="place-info">
+          <p><strong>Owner:</strong> Marie Dupont</p>
+          <p><strong>Number of rooms:</strong> 25</p>
+          <p><strong>Price per night:</strong> 220 €</p>
+          <p><strong>Description:</strong> Nestled in the countryside, this romantic château features antique furnishings and a breathtaking view of the vineyards.</p>
+          <p><strong>Amenities:</strong></p>
+          <ul>
+            <li>Pool</li>
+            <li>Spa</li>
+            <li>Gourmet Restaurant</li>
+            <li>Free Wi-Fi</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="reviews">
+    </section>
+
+    <section id="add-review">
+      <h2>Add a Review</h2>
+      <form id="review-form">
+        <label for="review-text">Review:</label>
+        <textarea id="review-text" name="review-text" required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="scripts.js"></script>
 </body>
 </html>

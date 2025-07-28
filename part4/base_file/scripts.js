@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Password:', password);
 
       // Envoi de la requête à l'API de login
-      fetch('http://localhost:5000/api/v1/auth/login', {
+      fetch('http://127.0.0.1:5000/api/v1/auth/login', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json'

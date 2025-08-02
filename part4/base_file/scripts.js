@@ -54,3 +54,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+function getCookie(name) {
+  console.log("🍪 Recherche du cookie:", name);
+  
+  const cookies = document.cookie;
+  console.log("Tous les cookies:", cookies);
+  
+  if (!cookies) {
+      console.log("Aucun cookie trouvé");
+      return null;
+  }
+  
+  const value = `; ${cookies}`;
+  const parts = value.split(`; ${name}=`);
+  
+  if (parts.length === 2) {
+      const cookieValue = parts.pop().split(';').shift();
+      console.log("Cookie trouvé:", cookieValue);
+      return cookieValue;
+  }
+  
+  console.log("Cookie non trouvé");
+  return null;
+}
+// Fonction pour vérifier si l'utilisateur est connecté
+function checkAuthentication() {
+  console.log("🔍 Vérification de l'authentification...");
+  const token = getCookie('token');
+  console.log("Token récupéré:", token);
+  const loginLink = document.getElementById('login-link');
+  console.log("Lien trouvé:", loginLink);
+  
+  if (!token) {
+    console.log("❌ Utilisateur non connecté");
+    if (loginLink) {
+      loginLink.style.display = 'block';
+      console.log("Lien Se connecter affiché");
+    }
+  } else {
+    console.log("✅ Utilisateur connecté avec le token:", token);
+    if (loginLink) {
+      loginLink.style.display = 'none';
+      console.log("Lien Se connecter caché");
+    }
+  }
+}
+document.addEventListener('DOMContentLoaded', () => {
+  console.log("📄 DOM chargé, vérification de l'authentification...");
+  checkAuthentication();
+});
